@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+#sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 0 16px;
+  background: transparent;
+}
+
+#sidebar-header h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #2a5d9f;
+  font-style: italic;
+  font-weight: bold;
+  flex: 1;
+  text-align: left;
+}
+
+#close-sidebar {
+  position: static;
+  background: rgba(255,255,255,0.95);
+  border: 2px solid #bbb;
+  font-size: 2.4em;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  z-index: 2000;
+  line-height: 1;
+  padding: 0 0.2em;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  margin-left: 12px;
+}
+#close-sidebar:hover {
+  color: #d00;
+  background: #fff;
+  border-color: #d00;
+}
+#sidebar-content {
+  position: relative;
+  padding: 0;
+}
+h2 {
+  margin: 16px 0 10px 16px;
+  font-size: 1.2em;
+  color: #2a5d9f;
+}
+#dictcc-frame {
+  width: 100%;
+  height: 80vh;
+  border: none;
+  background: #fff;
+}
+#hint {
+  margin: 10px 16px;
+  font-size: 1em;
+  color: #555;
+}
+#dictcc-sidebar {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s;
+  transform: translateX(100%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+#dictcc-sidebar.visible {
+  transform: translateX(0);
+  opacity: 1;
+}

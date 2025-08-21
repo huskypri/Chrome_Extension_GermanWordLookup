@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Dict.cc Translator Sidebar",
+  "version": "1.0",
+  "description": "Translate words to English using dict.cc in a sidebar on any webpage.",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sidebar.html", "sidebar.js", "sidebar.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "translate-selection": {
+      "description": "Translate selected word using dict.cc"
+    }
+  }
+}
